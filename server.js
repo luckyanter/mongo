@@ -197,5 +197,5 @@ app.post("/articles/delete/:id", function(req, res) {//this id belongs to specif
 
 // Listen on port 3000
 app.listen(PORT, function() {
-  console.log("App running on port 3000!");
+  console.log("App running on", PORT);
 });
