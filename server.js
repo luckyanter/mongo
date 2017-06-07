@@ -31,7 +31,7 @@ app.use(express.static("public"));
 
 // Database configuration with mongoose
 // mongoose.connect("mongodb://localhost/homework");
-mongoose.connect((process.env.MONGODB_URI) ||('mongodb://localhost/homework'));
+mongoose.connect(MONGODB_URI ||'mongodb://localhost/homework');
 var db = mongoose.connection;
 
 // Show any mongoose errors
