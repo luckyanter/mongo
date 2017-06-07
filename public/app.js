@@ -11,13 +11,13 @@ $.getJSON("/articles", function(data) {
 
 
 $('#articlesloading').on("click",function(){
-$.getJSON("/scrape", function(request,response) { 
-  // console.log(response);
-// response.redirect('/');
+$.getJSON("/scrape", function(responseFromServer) { 
+   console.log(responseFromServer);
+//\\ response.redirect('/');
 // alert('refresh the page');
-})
+});
 
-})
+});
 
 
 

@@ -16,7 +16,7 @@ var cheerio = require("cheerio");
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
 
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3000;//process.env.PORT will be used by heroku
 // Initialize Express
 var app = express();
 
@@ -32,6 +32,9 @@ app.use(express.static("public"));
 // Database configuration with mongoose
 // mongoose.connect("mongodb://localhost/homework");
 mongoose.connect((process.env.MONGODB_URI ||'mongodb://localhost/homework'));
+//go to heroku instructions in the homework assignment and follow the instructions then
+// heroku will assign a specific url with a variable named MONGODB_URI
+//we can either use the url or the var as in process.env.MONGODB_URI
 var db = mongoose.connection;
 
 // Show any mongoose errors
@@ -84,7 +87,7 @@ app.get("/scrape", function(req, res) {
   });
   // Tell the browser that we finished scraping the text
   // res.send("Scrape Complete");
-  res.redirect('/');
+  res.redirect('/');//??????????????????why did not work ???????
 });
 
 // This will get the articles we scraped from the mongoDB
